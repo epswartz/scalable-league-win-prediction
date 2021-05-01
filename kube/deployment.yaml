@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: league-win-prediction
+  namespace: default
+  labels:
+    app: league-win-prediction
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: league-win-prediction
+  template:
+    metadata:
+      labels:
+        app: league-win-prediction
+    spec:
+      containers:
+      - name: league-win-prediction-server
+        image: "epswartz/scalable-league-win-prediction"
+        imagePullPolicy: IfNotPresent
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 20
+          periodSeconds: 5
+          failureThreshold: 10
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "1"
+            memory: 500m

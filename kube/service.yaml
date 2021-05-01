@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: league-win-prediction
+  namespace: default
+  labels:
+    app: league-win-prediction
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    protocol: TCP
+    name: league-win-prediction-http
+  selector:
+    app: league-win-prediction

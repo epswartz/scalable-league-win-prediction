@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: league-win-prediction-server
-        image: "epswartz/scalable-league-win-prediction"
+        image: "eswartzen/league-win-prediction"
         imagePullPolicy: IfNotPresent
         readinessProbe:
           tcpSocket:

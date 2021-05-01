@@ -18,7 +18,7 @@ class APIUser(HttpUser):
         headers = {'content-type': 'application/json','Accept-Encoding':'gzip'}
         self.client.post(
             "/predict",
-            data= payload,
+            data=json.dumps(payload),
             headers=headers,
             name = "Predict Win Probability"
         )

@@ -15,6 +15,7 @@ def index():
 def predict():
     data = request.get_json()
     if data is None or "features" not in data:
+        print("Returning 400:", data)
         return jsonify({"error": "Missing input"}), 400
     features = data.get("features")
     x = np.asarray(features).reshape(1, -1)

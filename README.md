@@ -10,3 +10,7 @@ A scalable service for predicting wins in League of Legends using logistic regre
 1. Create a GKE cluster
 2. `kubectl apply -f ./kube/deployment.yaml`
 3. `kubectl apply -f ./kube/service.yaml`
+
+# Load Testing
+1. `pip install locust`
+2. `make locust host=<HOST>`

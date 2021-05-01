@@ -1,6 +1,6 @@
 # scalable-league-win-prediction
 
-A scalable service for predicting wins in League of Legends. Built to demonstrate containerized scalability on GKE.
+A scalable service for predicting wins in League of Legends using logistic regression. Built to demonstrate containerized scalability on GKE.
 
 # Running Locally
 1. `python3 main.py`
